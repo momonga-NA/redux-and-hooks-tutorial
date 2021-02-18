@@ -1,23 +1,17 @@
 import React , { useState } from 'react';
 
 const App = props =>{
-
-  const [name, setName] = useState(props.name);
-  const [price, setPrice] = useState(props.price);
-
-  const reset = () => {
-    setPrice(props.price);
-    setName(props.name);    
-  }
+  const [state, setState] = useState(props);
+  const reset = () => setState(props);
 
   return (
     <div className="App">
-      <p>現在の{name}は、{price}です。</p>
-      <button onClick={() => setPrice(price + 1)}>+1</button>
-      <button onClick={() => setPrice(price - 1)}>-1</button>
+      <p>現在の{state.name}は、{state.price}です。</p>
+      <button onClick={() => setState({...state, price: state.price + 1})}>+1</button>
+      <button onClick={() => setState({...state, price: state.price - 1})}>-1</button>
       <hr />
       <button onClick={reset}>リセット</button>
-      <input type="text" value={name} onChange={e => setName(e.target.value)} />
+      <input type="text" value={state.name} onChange={e => setState({...state, name: e.target.value})} />
     </div>
   );
 }
