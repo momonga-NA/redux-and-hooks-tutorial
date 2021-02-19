@@ -8,7 +8,11 @@ import AppContext from '../contexts/AppContext';
 
 const App = () =>{
 
-  const [state, dispatch] = useReducer(reducer, []);
+  const initialState = {
+    events: [],
+    operationLogs: []
+  }
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     // Prop Drilling解消 
