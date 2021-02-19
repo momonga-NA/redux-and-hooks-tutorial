@@ -4,6 +4,7 @@ import '../style/style.css';
 import reducer from '../reducers/index';
 import EventForm from './EventForm';
 import EventList from './EventList';
+import LogList from './LogList';
 import AppContext from '../contexts/AppContext';
 
 const App = () =>{
@@ -20,6 +21,7 @@ const App = () =>{
       <div className="container-fluid">
         <EventForm/>
         <EventList/>
+        <LogList/>
       </div>
     </AppContext.Provider>
   );
