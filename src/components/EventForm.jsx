@@ -74,7 +74,7 @@ const EventForm = () => {
         <hr />
         <button className="btn btn-primary btn-margin" disabled={unCreatable} onClick={addEvent} >イベントを作成する</button>
         <button className="btn btn-danger btn-margin" disabled={state.events.length === 0} onClick={deleteAllEvents}>全てのイベントを削除する</button>
-        <button className="btn btn-danger btn-margin" onClick={deleteAllOperationLogs}>全ての操作ログを削除する</button>
+        <button className="btn btn-success btn-margin" onClick={deleteAllOperationLogs}>全ての操作ログを削除する</button>
       </form>
     </>
   );
