@@ -7,10 +7,10 @@ const EventList = ({ state, dispatch}) => {
   // Context.Providerでなくても
   // useContextを利用する事で簡単に取得が可能
   const value = useContext(AppContext);
+  console.log(value);
 
   return(
     <>
-    <div>{value}</div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { DELETE_EVENT } from '../actions/index';
+import AppContext from '../contexts/AppContext';
 
 const Event = ({dispatch, event}) => {
 
@@ -11,7 +12,10 @@ const Event = ({dispatch, event}) => {
       })  
     }
   }
-  
+
+  const value = useContext(AppContext);
+  console.log(value);
+
   return(
     <>
       <tr>
