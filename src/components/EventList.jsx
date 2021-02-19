@@ -2,12 +2,9 @@ import React, { useContext } from 'react';
 import Event from './Event';
 import AppContext from '../contexts/AppContext'
 
-const EventList = ({ state, dispatch}) => {
+const EventList = () => {
 
-  // Context.Providerでなくても
-  // useContextを利用する事で簡単に取得が可能
-  const value = useContext(AppContext);
-  console.log(value);
+  const { state } = useContext(AppContext);
 
   return(
     <>
@@ -23,7 +20,7 @@ const EventList = ({ state, dispatch}) => {
         </thead>
         <tbody>
           {state.map(event => (
-            <Event key={event.id} dispatch={dispatch} event={event} />  
+            <Event key={event.id} event={event} />  
           ))}
         </tbody>
        </table>

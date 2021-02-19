@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { DELETE_EVENT } from '../actions/index';
 import AppContext from '../contexts/AppContext';
 
-const Event = ({dispatch, event}) => {
+const Event = ({event}) => {
 
   const handleClickDeleteButton = () => {
     if(window.confirm(`id=${event.id}のイベントを削除してもよいですか？`)){
@@ -13,8 +13,7 @@ const Event = ({dispatch, event}) => {
     }
   }
 
-  const value = useContext(AppContext);
-  console.log(value);
+  const { dispatch } = useContext(AppContext);
 
   return(
     <>
