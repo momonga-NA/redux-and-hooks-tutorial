@@ -4,17 +4,16 @@ import {
 } from '../actions/index';
 
 const operationLogs = (state = [], action) => {
-
-  switch(state.type){
+  switch(action.type){
     case ADD_OPERATION_LOG:
-      return state;
-    case DELETE_ALL_OPERATION_LOGS:
-      const { operationAt, descriptionDate} = action;
+      const { operationAt, description} = action;
       const operationLog = {
         operationAt, 
-        descriptionDate        
+        description
       };
       return [operationLog ,...state];
+    case DELETE_ALL_OPERATION_LOGS:
+      return [];
     default:
       return state
   }
